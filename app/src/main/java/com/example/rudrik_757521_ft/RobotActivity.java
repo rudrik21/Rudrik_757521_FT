@@ -2,6 +2,9 @@ package com.example.rudrik_757521_ft;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,6 +37,8 @@ public class RobotActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_robot);
 
+        getSupportActionBar().setTitle("Verification");
+
         user = (User) getIntent().getSerializableExtra("USER");
         Log.e(TAG, "onCreate: "+ user);
 
@@ -45,15 +50,17 @@ public class RobotActivity extends AppCompatActivity {
         adpt = new AdptLights(this);
         gridView.setAdapter(adpt);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @SuppressLint("NewApi")
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 ImageView v = view.findViewById(R.id.imgLight);
                 if (v.getTag().toString().equals("TRAFFIC_LIGHT")){
                     counter = counter + 1;
+                }else{
+                    counter = counter - 1;
                 }
                 v.setEnabled(false);
                 v.setForeground(getDrawable(R.drawable.checked));
-                Toast.makeText(RobotActivity.this, String.valueOf(position), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -62,10 +69,26 @@ public class RobotActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (counter == 4 && chkRobot.isChecked()){
                     User.listUsers.add(user);
-                    finish();
+                    new AlertDialog.Builder(RobotActivity.this)
+                            .setTitle("Success")
+                            .setMessage("User has been Registered.")
+                            .setPositiveButton("Alright 🤟😁", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    finish();
+                                }
+                            }).show();
+
                 }else{
-                    Toast.makeText(RobotActivity.this, "Invalid selection!", Toast.LENGTH_SHORT).show();
-                    finish();
+                    new AlertDialog.Builder(RobotActivity.this)
+                            .setTitle("Error")
+                            .setMessage("wrong selection!")
+                            .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    finish();
+                                }
+                            }).show();
                 }
             }
         });
@@ -73,6 +96,7 @@ public class RobotActivity extends AppCompatActivity {
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                counter = 0;
                 gridView.setAdapter(null);
                 adpt = new AdptLights(getApplicationContext());
                 gridView.setAdapter(adpt);
@@ -81,9 +105,4 @@ public class RobotActivity extends AppCompatActivity {
         });
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        this.finish();
-    }
 }

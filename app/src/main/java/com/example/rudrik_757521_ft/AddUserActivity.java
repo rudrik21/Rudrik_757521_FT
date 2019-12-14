@@ -23,6 +23,8 @@ public class AddUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
 
+        getSupportActionBar().setTitle("Registration");
+
         edtName = (EditText) findViewById(R.id.edtName);
         edtEmail = (EditText) findViewById(R.id.edtEmail);
         edtPhone = (EditText) findViewById(R.id.edtPhone);
@@ -44,7 +46,6 @@ public class AddUserActivity extends AppCompatActivity {
                     finish();
                 }else{
                     Toast.makeText(AddUserActivity.this, "Empty fields!", Toast.LENGTH_SHORT).show();
-                    finish();
                 }
             }
         });

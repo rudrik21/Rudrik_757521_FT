@@ -40,7 +40,7 @@ public class AdptUserList extends ArrayAdapter {
         TextView txtUemail = cv.findViewById(R.id.txtUemail);
         TextView txtUphone = cv.findViewById(R.id.txtUphone);
 
-        imgUser.setImageDrawable(context.getDrawable(Utils.getShuffledUserImages().get(0)));
+        imgUser.setImageDrawable(context.getDrawable(u.getAvatar()));
         txtUname.setText(u.getName());
         txtUemail.setText(u.getEmail());
         txtUphone.setText(u.getPhone());

@@ -37,6 +37,7 @@
         android:layout_margin="8dp"
         android:clickable="true"
         android:focusable="true"
+        app:backgroundTint="@color/colorPrimary"
         app:srcCompat="@drawable/ic_add" />
 
 </RelativeLayout>

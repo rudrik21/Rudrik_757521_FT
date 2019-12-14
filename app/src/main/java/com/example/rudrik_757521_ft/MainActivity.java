@@ -24,6 +24,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        getSupportActionBar().setTitle("Users");
+
         new Utils(this);
         Log.e(TAG, "userImages: " + Utils.userImages.size());
         Log.e(TAG, "lightImages: " + Utils.lightImages.size());

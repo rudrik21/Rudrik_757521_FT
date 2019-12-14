@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     tools:context=".AddUserActivity">
 
     <LinearLayout
         android:layout_margin="10pt"
+        android:layout_gravity="center"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -26,6 +26,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
+            android:inputType="textPersonName"
             android:hint="name"
             android:padding="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
@@ -34,6 +35,7 @@
             android:id="@+id/edtEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             android:gravity="center_horizontal"
             android:hint="email"
             android:padding="8dp"
@@ -44,6 +46,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
+            android:inputType="numberDecimal"
+            android:maxLength="10"
             android:hint="phone"
             android:padding="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
@@ -58,4 +62,4 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </LinearLayout>
-</RelativeLayout>
+</ScrollView>

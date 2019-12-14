@@ -19,10 +19,18 @@ public class UserDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_details);
 
+        getSupportActionBar().setTitle("User Details");
+
         frag_UserDetails = (FragUserDetails) getSupportFragmentManager().findFragmentById(R.id.frag_UserDetails);
         position = getIntent().getIntExtra("SELECTED_POSITION", -1);
         Log.e(TAG, "onCreate: "+ position);
 
         frag_UserDetails.setDetails(position);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        this.finish();
     }
 }

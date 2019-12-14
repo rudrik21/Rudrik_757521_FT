@@ -9,7 +9,6 @@
 
     <ImageView
         android:id="@+id/imgUserUD"
-        android:src="@drawable/icon01_01"
         android:layout_marginTop="20pt"
         android:layout_width="50pt"
         android:layout_height="50pt"/>
@@ -17,7 +16,6 @@
 
     <TextView
         android:id="@+id/txtUnameUD"
-        android:text="MO"
         android:padding="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:layout_width="wrap_content"
@@ -25,7 +23,6 @@
 
     <TextView
         android:id="@+id/txtUemailUD"
-        android:text="mo@email.com"
         android:padding="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="wrap_content"
@@ -33,7 +30,6 @@
 
     <TextView
         android:id="@+id/txtUphoneUD"
-        android:text="123456789"
         android:padding="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:layout_width="wrap_content"

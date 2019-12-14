@@ -8,13 +8,11 @@
 
     <ImageView
         android:id="@+id/imgUser"
-        android:src="@drawable/icon01_01"
         android:layout_width="48dp"
         android:layout_height="48dp"/>
 
     <TextView
         android:id="@+id/txtUname"
-        android:text="MO"
         android:layout_marginStart="8dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:layout_width="wrap_content"
@@ -28,14 +26,12 @@
 
         <TextView
             android:id="@+id/txtUemail"
-            android:text="mo@email.com"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
         <TextView
             android:id="@+id/txtUphone"
-            android:text="123456789"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

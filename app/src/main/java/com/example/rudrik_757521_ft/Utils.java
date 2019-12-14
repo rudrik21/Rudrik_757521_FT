@@ -78,14 +78,12 @@ public class Utils {
     }
 
     public static ArrayList<Integer> getShuffledUserImages(){
-        ArrayList<Integer> shuffled = userImages;
-        Collections.shuffle(shuffled);
-        return shuffled;
+        Collections.shuffle(userImages);
+        return userImages;
     }
 
     public static ArrayList<Integer> getShuffledLightImages(){
-        ArrayList<Integer> shuffled = lightImages;
-        Collections.shuffle(shuffled);
-        return shuffled;
+        Collections.shuffle(lightImages);
+        return lightImages;
     }
 }

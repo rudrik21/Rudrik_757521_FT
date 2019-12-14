@@ -39,8 +39,6 @@ public class FragUserDetails extends Fragment {
         v = inflater.inflate(R.layout.fragment_frag_user_details, container, false);
         pos = getActivity().getIntent().getIntExtra("SELECTED_POSITION", -1);
 
-        setData();
-
         return v;
     }
 
@@ -58,7 +56,7 @@ public class FragUserDetails extends Fragment {
 
         if (pos > -1) {
             user = User.listUsers.get(pos);
-            imgUserUD.setImageDrawable(getContext().getDrawable(Utils.getShuffledUserImages().get(0)));
+            imgUserUD.setImageDrawable(getContext().getDrawable(user.getAvatar()));
             txtUnameUD.setText(user.getName());
             txtUemailUD.setText(user.getEmail());
             txtUphoneUD.setText(user.getPhone());

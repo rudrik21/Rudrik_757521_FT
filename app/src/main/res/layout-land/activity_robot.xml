@@ -37,6 +37,7 @@
 
        <CheckBox
            android:id="@+id/chkRobot"
+           android:buttonTint="@color/colorPrimary"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"/>
 
@@ -46,6 +47,7 @@
            android:layout_height="wrap_content"/>
 
        <ImageButton
+           android:id="@+id/btnRefresh"
            android:layout_width="36dp"
            android:layout_height="36dp"
            android:layout_marginStart="8dp"
